@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+}
+
+/* INPUT TEXT */
+
+.input-textarea {
+  width: 90%;
+  height:80px;
+  max-width: 800px; 
+  margin: 10px auto;
+  padding: 4px 12px;
+}
+
+

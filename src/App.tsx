@@ -1,26 +1,54 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { ChangeEvent, useState, useRef } from 'react';
+import './css/App.css';
+import IWordProperties from './interfaces/IWordProperties'
+import IWord from './interfaces/IWord'
+import ScoredWords from './data/scored-words'
+import { useWordsStore } from './global-state/useWordsStore'
+import { getValue } from '@testing-library/user-event/dist/utils';
+import { InputText } from './components/InputText'
 
-function App() {
+
+export default function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <InputText/>
+      <OutputCircle />
+
     </div>
-  );
+  )
 }
 
-export default App;
+
+
+
+
+const OutputCircle = () => {
+  const words = useWordsStore((state) => state.words);
+  const setWords = useWordsStore((state) => state.setWords);
+
+
+  return (
+    <>
+      <div className="circle-image">
+        
+      </div>
+    </>
+  )
+}
+
+const Circle = () => {
+  const words = useWordsStore((state) => state.words);
+  const setWords = useWordsStore((state) => state.setWords);
+
+
+  return (
+    <>
+      <div className="circle-image">
+
+      </div>
+    </>
+  )
+}
+
