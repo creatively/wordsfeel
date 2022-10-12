@@ -5,12 +5,12 @@ import { immer } from "zustand/middleware/immer"
 
 type State = {
   words: IWord[],
-  text: string | undefined
+  text: string
 }
 
 type Actions = {
   setWords: (words: IWord[]) => void
-  setText: (text: string | undefined) => void
+  setText: (text: string) => void
 }
 
 export const useWordsStore = create(
@@ -21,7 +21,7 @@ export const useWordsStore = create(
       set((state) => {
         state.words = words
       }),
-    setText: (text: string | undefined) =>
+    setText: (text: string) =>
       set((state) => {
         state.text = text
       })

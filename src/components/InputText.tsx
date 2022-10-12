@@ -4,8 +4,8 @@ import { useWordsStore } from '../global-state/useWordsStore'
 
 
 export const InputText = () => {
-    const text = useWordsStore((state) => state.text);
-    const setText = useWordsStore((state) => state.setText);
+    const text = useWordsStore((state) => state.text)
+    const setText = useWordsStore((state) => state.setText)
    
     const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => setText(e.target.value)
   
