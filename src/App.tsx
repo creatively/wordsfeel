@@ -6,8 +6,9 @@ import ScoredWords from './data/scored-words'
 import { useWordsStore } from './global-state/useWordsStore'
 import { getValue } from '@testing-library/user-event/dist/utils';
 import { InputText } from './components/InputText'
-import { getWordsFromText } from './functions/getWordsFromText'
+import { getWordsFromText } from './functions/_getWordsFromText'
 import { OutputCircle } from './components/OutputCircle'
+
 
 export default function App() {
 
