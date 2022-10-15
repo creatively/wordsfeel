@@ -1,13 +1,20 @@
-import React, { ChangeEvent } from 'react';
+import React, { useEffect, useState, useRef, ChangeEvent } from 'react';
 import '../css/InputText.css'
-import { useWordsStore } from '../global-state/useWordsStore'
+import { useGlobals } from '../hooks/useGlobals'
+import { useWordObjects } from '../hooks/useWordObjects'
 
 
 export const InputText = () => {
-    const text = useWordsStore((state) => state.text)
-    const setText = useWordsStore((state) => state.setText)
-   
-    const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => setText(e.target.value)
+
+    const { text, setText } = useGlobals()
+    const [ localText, setLocalText ] = useState<string>(``)
+
+    useWordObjects()
+
+    const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+        setText(e.currentTarget.value)
+    }
+
   
     return (
         <section className="input-text">

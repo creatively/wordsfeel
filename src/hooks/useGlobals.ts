@@ -1,4 +1,3 @@
-import IWordProperties from '../interfaces/IWordProperties'
 import IWord from '../interfaces/IWord'
 import create from 'zustand'
 import { immer } from "zustand/middleware/immer"
@@ -13,17 +12,32 @@ type Actions = {
   setText: (text: string) => void
 }
 
-export const useWordsStore = create(
+
+const states = create(
   immer<State & Actions>((set) => ({
+
     words: [],
     text: '',
+
     setWords: (words: IWord[]) =>
       set((state) => {
         state.words = words
       }),
+
     setText: (text: string) =>
       set((state) => {
         state.text = text
       })
+      
   }))
 )
+
+
+export const useGlobals = () => {
+    return {
+        text:       states((state) => state.text),
+        setText:    states((state) => state.setText),
+        words:      states((state) => state.words),
+        setWords:   states((state) => state.setWords)
+    }
+}

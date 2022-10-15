@@ -1189,7 +1189,11 @@ words.set('bitch', [ 201,507, 0,0 ])
 words.set('feck', [ 218,527, 0,0 ])
 words.set('bastard', [218, 562, 0, 0])
 
+const scoredWords: Map<string, number[]> = words
+const scoredWordsArray: string[] = Array.from(words.keys())
 
-export default words
 
-export const scoredWordsArray: string[] = Array.from(words.keys())
+export {
+    scoredWords,
+    scoredWordsArray
+}

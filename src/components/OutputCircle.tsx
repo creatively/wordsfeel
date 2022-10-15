@@ -1,19 +1,21 @@
-import { Circle } from './Circle'
 import '../css/OutputCircle.css'
-import { useWordsStore } from '../global-state/useWordsStore'
+import { Circle } from './Circle'
 import IWord from '../interfaces/IWord'
+import { useGlobals } from '../hooks/useGlobals'
 
 
 export const OutputCircle = () => {
-    const words = useWordsStore((state) => state.words)
 
-    return (
-      <section className="output-circle">
-  
-        { words.map((word: IWord) => (
-            <Circle word={word} />
-        ))}
-  
-      </section>
-    )
+  const { words, text } = useGlobals()
+
+
+  return (
+    <section className="output-circle">
+{text}
+      { words.map((word: IWord) => (
+          <Circle word={word} />
+      ))}
+
+    </section>
+  )
 }
