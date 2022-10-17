@@ -1,4 +1,4 @@
-export function getColorFromXY(x: number, y: number) {
+export function getColorFromXY(x: number, y: number): string {
 
         const YELLOW = 'f9da4d'
         const ORANGE = 'ffb365'
@@ -19,4 +19,5 @@ export function getColorFromXY(x: number, y: number) {
         if (x>569 && y <430) return GREEN
         if (x>569 && y <570) return LIGHT_BLUE
         if (x>569 && y >569) return BLUE
+        return WHITE
 }

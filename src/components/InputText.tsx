@@ -1,24 +1,33 @@
-import React, { useEffect, useState, useRef, ChangeEvent } from 'react';
+import React, { useState, useMemo, useEffect, ChangeEvent } from 'react';
 import '../css/InputText.css'
+import IWord from '../interfaces/IWord'
 import { useGlobals } from '../hooks/useGlobals'
-import { useWordObjects } from '../hooks/useWordObjects'
+import { getUpdatedWordObjects } from '../functions/getUpdatedWordObjects'
+import { useDebounce } from '../hooks/useDebounce'
 
 
 export const InputText = () => {
 
-    const { text, setText } = useGlobals()
-    const [ localText, setLocalText ] = useState<string>(``)
+    //const localText?? text??? = useDebounce(localText, 1000)
+    const { setWords } = useGlobals()
+    const [ localText, setLocalText ] = useState(``)
 
-    useWordObjects()
 
-    const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-        setText(e.currentTarget.value)
-    }
+    useEffect(() => {
 
-  
+        const words: IWord[] = getUpdatedWordObjects(localText)
+        setWords(words)
+
+    }, [ localText, setWords ])
+
+
     return (
         <section className="input-text">
-          <textarea className="input-textarea" value={text} onChange={handleChange}/>
+          <textarea className="input-textarea" 
+            name="localText" 
+            value={localText} 
+            onChange={e => setLocalText(e.target.value)}
+        />
         </section>
     )
 }

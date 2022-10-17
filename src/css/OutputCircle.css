@@ -1,0 +1,17 @@
+.output-circle {
+    margin: 0 auto;
+    position: relative;
+    border:0;
+    height: 400px;
+    width: 400px;
+}
+    .output-circle__plutchiks-wheel {
+        margin: 0 auto;
+        border:0;
+        height: 400px;
+        width: 400px;
+        background: url('../assets/plutchiks-wheel.png');
+        background-size: contain;
+        z-index:10;
+        position: relative;
+    }

@@ -1,5 +1,7 @@
-import IWordProperties from './IWordProperties'
-
-export default interface Word {
-    [ key: string ]: IWordProperties,
+export default interface IWord {
+    name: string,
+    frequency: number,
+    circleX: number,
+    circleY: number,
+    colour: string
 }

@@ -1,0 +1,5 @@
+.circle {
+    position: absolute;
+    opacity: 0.15;
+    z-index: -1;
+}
