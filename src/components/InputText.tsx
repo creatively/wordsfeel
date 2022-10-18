@@ -8,26 +8,23 @@ import { useDebounce } from '../hooks/useDebounce'
 
 export const InputText = () => {
 
-    //const localText?? text??? = useDebounce(localText, 1000)
     const { setWords } = useGlobals()
     const [ localText, setLocalText ] = useState(``)
 
 
     useEffect(() => {
-
         const words: IWord[] = getUpdatedWordObjects(localText)
         setWords(words)
-
     }, [ localText, setWords ])
 
 
     return (
         <section className="input-text">
-          <textarea className="input-textarea" 
-            name="localText" 
-            value={localText} 
-            onChange={e => setLocalText(e.target.value)}
-        />
+            <textarea className="input-textarea" 
+                name="localText" 
+                value={localText} 
+                onChange={e => setLocalText(e.target.value)}
+            />
         </section>
     )
 }

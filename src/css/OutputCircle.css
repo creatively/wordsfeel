@@ -2,16 +2,23 @@
     margin: 0 auto;
     position: relative;
     border:0;
-    height: 400px;
-    width: 400px;
+    /*   match h/w with the "containerScaler" variable in "Circle.tsx" of 0.44  */
+    height: 435px; 
+    width: 436px;
+    overflow: hidden;
+    background: white;
+    padding: 0px;
+    border-radius: 220px;
+    z-index: 1;
 }
     .output-circle__plutchiks-wheel {
         margin: 0 auto;
         border:0;
-        height: 400px;
-        width: 400px;
+        margin-top:-3px;
+        margin-left:-1px;
+        height: 440px;
+        width: 440px;
         background: url('../assets/plutchiks-wheel.png');
         background-size: contain;
         z-index:10;
-        position: relative;
     }
