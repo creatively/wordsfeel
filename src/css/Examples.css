@@ -1,0 +1,32 @@
+.examples {
+    border-top: 1px solid #bbb;
+    margin: 10px auto 100px;
+    padding-bottom: 60px;
+}
+    .examples h2 {
+        margin-top: 30px;
+        padding-bottom: 0;
+    }
+
+    ul.examples__examples {
+        list-style: none;
+        margin-top: 0;
+        padding-left: 0;
+        font-size: 1.6em;
+    }
+
+        li.examples__item {
+            margin: 10px auto;
+            padding: 0;
+        }
+            .examples__description {
+                display: inline-block;
+            }
+            .examples__icon-copy {
+                height: 26px;
+                padding: 0 12px;
+                cursor: pointer;
+            }
+            
+
+    

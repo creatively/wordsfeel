@@ -8,17 +8,26 @@ import { randomkey } from '../hooks/useRandomkey'
 export const OutputCircle = () => {
 
   const { words } = useGlobals()
-  console.log('in OutputCircle')
+  
+
   return (
 
     <section className="output-circle">
       { words.map((word: IWord) => (
 
-          <Circle key={randomkey()} {...word}  />
+          <Circle key={randomkey()} {...word} />
 
       ))}
       <div className="output-circle__plutchiks-wheel"></div>
 
+      <ul>
+        { words.map((word: IWord) => (
+          <li key={randomkey()}>
+            <div>{word.name}</div>
+            <div>{word.frequency}</div>
+          </li>
+        )) }
+      </ul>
     </section>
 
   )

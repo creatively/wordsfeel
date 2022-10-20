@@ -9,7 +9,8 @@ import { useDebounce } from '../hooks/useDebounce'
 export const InputText = () => {
 
     const { setWords } = useGlobals()
-    const [ localText, setLocalText ] = useState(``)
+    const { transcriptText } = useGlobals()
+    const [ localText, setLocalText ] = useState('')
 
 
     useEffect(() => {
@@ -17,11 +18,16 @@ export const InputText = () => {
         setWords(words)
     }, [ localText, setWords ])
 
+    useEffect(() => {
+        setLocalText(transcriptText)
+    }, [ transcriptText ])
+
 
     return (
         <section className="input-text">
             <textarea className="input-textarea" 
                 name="localText" 
+                placeholder="Paste any text in here"
                 value={localText} 
                 onChange={e => setLocalText(e.target.value)}
             />

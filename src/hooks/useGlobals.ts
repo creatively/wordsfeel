@@ -4,12 +4,14 @@ import { immer } from "zustand/middleware/immer"
 
 type State = {
   words: IWord[],
-  text: string
+  text: string,
+  transcriptText: string
 }
 
 type Actions = {
-  setWords: (words: IWord[]) => void
-  setText: (text: string) => void
+  setWords: (words: IWord[]) => void,
+  setText: (text: string) => void,
+  setTranscriptText: (transcriptText: string) => void
 }
 
 
@@ -18,6 +20,7 @@ const states = create(
 
     words: [],
     text: '',
+    transcriptText: '',
 
     setWords: (words: IWord[]) =>
       set((state) => {
@@ -27,6 +30,11 @@ const states = create(
     setText: (text: string) =>
       set((state) => {
         state.text = text
+      }),
+
+    setTranscriptText: (transcriptText: string) =>
+      set((state) => {
+        state.transcriptText = transcriptText
       })
       
   }))
@@ -35,9 +43,11 @@ const states = create(
 
 export const useGlobals = () => {
     return {
-        text:       states((state) => state.text),
-        setText:    states((state) => state.setText),
-        words:      states((state) => state.words),
-        setWords:   states((state) => state.setWords)
+        text:             states((state) => state.text),
+        setText:          states((state) => state.setText),
+        words:            states((state) => state.words),
+        setWords:         states((state) => state.setWords),
+        transcriptText:   states((state) => state.transcriptText),
+        setTranscriptText: states((state) => state.setTranscriptText)
     }
 }

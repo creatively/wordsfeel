@@ -1,0 +1,16 @@
+.heading {
+    padding: 20px 6px 0;
+    background-image: linear-gradient(180deg, #d3cdc3, #ece9e3 97%);
+}
+
+.heading__light,
+.heading__medium {
+    line-height: 1em;
+    font-size: 1.6em;
+}
+    .heading__light {
+        font-weight: 200;
+    }
+    .heading__medium {
+        font-weight: 500;
+    }

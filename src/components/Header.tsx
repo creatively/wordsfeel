@@ -7,8 +7,9 @@ export const Header = () => {
     return (
 
         <header className="header">
-            Words Feel
+            <div className="header__website-name">words feel</div>
+            <div className="header__logo"></div>
         </header>
-  
+
     )
 }

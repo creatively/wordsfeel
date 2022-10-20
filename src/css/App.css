@@ -2,8 +2,9 @@
   text-align: center;
   z-index:1;
   position: relative;
-  background: #eee;
+  background: #ece9e3;
   margin: 20px;
-  box-shadow: 1px 1px 10px #888;
+  box-shadow: 1px 1px 5px 1px #888;
   border-radius: 10px;
+  font-family: 'Fira Sans', serif;
 }
