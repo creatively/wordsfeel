@@ -1,46 +1,16 @@
-# Getting Started with Create React App
+This single-page website converts text/transcript into a coloured map of the emotions of the content.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Colours are mapped onto Plutchnik's 'Wheel of emotion' - for psychologists, Plutchnik's Wheel is perhaps the most established map of emotions.
 
-## Available Scripts
+>  The text (large transcripts give the best results), is typed or pasted into a textbox by the user
+>  The code makes a frequency count of the words in the text
+>  The code then matches these words against a pre-indexed list of 1000 common English words. Each word has been pre-indexed to a particular emotion.
+>  The code then draws semi-transparent circles inside the diagram, with the circle size representing a word's frequency in the text
+>  The user gets to see the emotional tone of the transcript as they type/paste
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Future Improvements :
+>  Only just over 1000 common English words have been indexed to an emotion. This should be increased to several thousand ideally.
+>  The choice of emotion that's mapped to each word needs to be validated by several people (currently only one person has allocated which emotion a word best links to)
+>  The severity of each word-emotion mapping needs to factored in. For example 'adore' is stronger than 'like', and should have more weighting in circle size or colour tone.
+>  Some words should be applied to multiple emotions, eg. 'worry' can be mapped to both the 'Anticipation' side of the Wheel, but can also be mapped to 'Fear' at the opposite side of the wheel.
+>  Some English words are inherently ambiguous, eg. 'beat' or 'long' or 'sling' - but this is a broader problem not yet fully solved by even advanced AI language-processing technology
