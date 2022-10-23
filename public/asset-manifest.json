@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.36776fc6.css",
+    "main.js": "/static/js/main.ed222830.js",
+    "static/media/plutchiks-wheel.png": "/static/media/plutchiks-wheel.c6e759662333422f2b3b.png",
+    "index.html": "/index.html",
+    "main.36776fc6.css.map": "/static/css/main.36776fc6.css.map",
+    "main.ed222830.js.map": "/static/js/main.ed222830.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.36776fc6.css",
+    "static/js/main.ed222830.js"
+  ]
+}
