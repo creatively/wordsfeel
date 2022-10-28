@@ -50,5 +50,4 @@ export const getUpdatedWordObjects = (text: string): IWord[] => {
             colour: colour
         }
     }
-            //.map(scaleNumbers)
 }
